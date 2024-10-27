@@ -1,0 +1,81 @@
+/*  Add bootstrap (or other framework) styling to your CV website that you developed the other day.
+ Use Bootstrap’s existing components to give all the elements of your page a consistent look 
+ (e.g., the navigation bar, the form items, etc.). The website should be responsive and adapt the size
+  and disposition of the items according to the device size. Also feel free to use a Bootstrap theme (from bootswatch.com).
+   In addition to the bootstrap styles, add your own CSS rules to further customize the content (at least 5 new rules). */
+
+
+/* Navigation bars = kun vaihtaa sivua
+Buttons kun vaihtaa sivua
+Forms
+accordion cv:seen
+theme perus tausta
+*/
+
+
+/* Alkuperäinen tyyli suurille näytöille */
+
+.table-responsive {
+    margin-top: 20px; /* Marginaali ylhäällä */
+    width: 60%; /* Alkuperäinen leveys 100% */
+    overflow-x: auto; /* Lisätty, jotta taulukko voi skaalautua */
+}
+table {
+    width: 60%; /* Leveys 60% yli 650px */
+    margin: 0 auto; /* Keskittää taulukon */
+}
+
+/* Media query näytön koon mukaan */
+@media (max-width: 650px) {
+    table {
+        width: 100%; /* Leveys 100% alle 650px */
+    }
+}
+
+body {
+    background-color: #2a002a;
+    color: white;
+    min-height: 100vh; /* Muutettu height 100% -> min-height 100vh */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Keskittää vaakasuunnassa */
+    align-items: center;     /* Keskittää pystysuunnassa */
+    flex-direction: column;  /* Asettaa elementit päällekkäin */
+}
+
+/* Neon-efekti linkeille */
+.neon-link {
+    color: #00ffff; /* Neon sininen */
+    transition: color 0.3s, text-shadow 0.3s; /* Sulava siirtymä */
+}
+
+.neon-link:hover {
+    color: #ff00ff; /* Neon pinkki */
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #cc00cc, 0 0 40px #cc00cc, 0 0 50px #cc00cc;
+}
+
+/* Accordion-painikkeiden tyyli */
+.accordion-button {
+    background-color: #370037; /* Tumma taustaväri hieman erottuen body-taustasta */
+    color: white; /* Neon sininen tekstiväri */
+    border: none;
+    border-radius: 8px; /* Pyöristetyt reunat */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Sulava siirtymä */
+}
+
+.accordion-button:hover {
+    background-color: #2a002a; /* Korostus hover-tilassa, joka eroaa hieman taustasta */
+    color: #00ffff; /* Neon sininen pysyy hover-tilassa */
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* Neon sininen hohto hover-tilassa */
+}
+
+/* Accordion-painikkeen aktiivinen tila */
+.accordion-button:not(.collapsed) {
+    background-color: #2a002a; /* Kun painike on aktiivinen, hieman tummempi väri */
+    color: #ff00ff; /* Neon pinkki aktiivisessa tilassa */
+}
+
+.custom-heading {
+    color: #e1aee1; /* Lisätty puuttuva sulku */
+}
